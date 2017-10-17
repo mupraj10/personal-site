@@ -21,16 +21,14 @@ export default class Root extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Navbar />
-          <section className="section">
+        <div className="vh-100 bg-light-pink dt w-100">
+          {/* <Navbar /> */}
             <Route exact path='/' component={Home} />
             <Route exact path='/aboutme' component={AboutMe} />
             <Route exact path='/projects' component={Projects} />
             <Route exact path='/skills' component={Skills} />
             <Route exact path='/resume' component={Resume} />
             <Route exact path='/contactme' component={ContactMe} />
-          </section>
           <Footer />
         </div>
       </Router>
