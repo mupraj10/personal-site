@@ -18,7 +18,7 @@ const Home = () => {
              Hi! I am Maggy Prajapati. I am software developer!</h1>
             <br />
             <p className="f4 black mt3 mb5 w-60-l w-80-xl lh-title"> Currently, I am a teaching fellow at
-            <a href="www.gracehopper.com" className={linkStyle}> Grace Hopper Academy</a>. You can check out some
+            <a href="https://www.gracehopper.com/" className={linkStyle}> Grace Hopper Academy</a>. You can check out some
             <Link to="/projects" className={linkStyle}> projects </Link>
                     I have worked on and the
             <Link to='/skills' className={linkStyle}> skills </Link>
