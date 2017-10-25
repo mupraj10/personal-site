@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 //components being imported in
 import Home from './Home';
@@ -21,7 +21,7 @@ export default class Root extends Component {
   render() {
     return (
       <Router>
-        <div className="vh-100 bg-light-pink dt w-100">
+        <div className="vh-100 bg-light-gray dt w-100">
           {/* <Navbar /> */}
             <Route exact path='/' component={Home} />
             <Route exact path='/aboutme' component={AboutMe} />
