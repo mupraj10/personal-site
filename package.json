@@ -25,6 +25,8 @@
     "pg-native": "^1.10.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-motion": "^0.5.2",
+    "react-motion-menu": "^0.4.4",
     "react-redux": "^4.4.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
