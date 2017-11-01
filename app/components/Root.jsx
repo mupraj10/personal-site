@@ -23,7 +23,7 @@ export default class Root extends Component {
     return (
       <Router>
         
-        <div className="vh-100 bg-light-gray dt w-100">
+        <div className="vh-100 bg-light-gray dt w-100 helvetica pb5">
           <ClickMenu/>
           <Switch>
             <Route exact path='/' component={Home} />

@@ -3,8 +3,8 @@ import React from 'react';
 const Projects = () => {
     return (
 
-        <section className="section">
-            <div className="container">
+        <article className="helvetica pb5">
+            <section className="w-100-ns mb6 w-100-l pt6 pl1-ns dark-gray">
                 <h2 className="title">Projects </h2>
                 <hr />
 
@@ -51,8 +51,8 @@ const Projects = () => {
             </div>
 
 
-            </div>
-        </section>
+            </section>
+        </article>
 
     )
 }
