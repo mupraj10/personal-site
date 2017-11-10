@@ -1,5 +1,6 @@
  const projects = [
      {
+        id:0,
         name: "BuJo",
         completed: true,
         picture: '/',
@@ -11,6 +12,7 @@
 
     },
     {
+        id:1,
         name: "Ice Creamy",
         completed: false,
         picture: '/',
@@ -22,6 +24,7 @@
 
     },
    {
+        id:2,
         name: "Moodifs",
         completed: false,
         picture: '/',

@@ -11,7 +11,6 @@ import Resume from './Resume'
 
 import ClickMenu from './ClickMenu'
 import Navbar from './Navbar';
-import Body from './Body';
 import Footer from './Footer';
 
 export default class Root extends Component {
@@ -23,8 +22,7 @@ export default class Root extends Component {
     return (
       <Router>
         
-        <div className="vh-100 bg-light-gray dt w-100 helvetica pb5">
-          <ClickMenu/>
+        <div className="vh-100 bg-washed-yellow dt w-100 avenir next">
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/aboutme' component={AboutMe} />
@@ -33,7 +31,7 @@ export default class Root extends Component {
             <Route exact path='/resume' component={Resume} />
             <Route exact path='/contactme' component={ContactMe} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     )

@@ -1,59 +1,51 @@
-import React from 'react';
+import React,{Component} from 'react';
+import skills from '../../information/skills';
 
-const Skills = () => {
-    return (
+import SkillCard from './SkillCard';
 
-        <section className="section">
-            <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                    <article className="tile is-child">
-                        <p className="title">Frontend</p>
-                        <div className='box'>
-                            <li> JavaScript (ES6) </li>
-                            <li> HTML5 </li>
-                            <li> CSS3 </li>
-                            <li> React </li>
-                            <li> React Native </li>
-                            <li> Redux </li>
-                        </div>
+export default class Skills extends Component {
+    constructor(){
+        super()
+        this.state = {
+            skillId: null
+        }
+        this.changeSkill = this.changeSkill.bind(this)
+    }
 
-                    </article>
-                </div>
-                <div className="tile is-parent">
-                    <article className="tile is-child">
-                        <p className="title">Backend</p>
-                        <div className='box'>
-                            <li> Node.js </li>
-                            <li>  Express.js </li>
-                            <li>  SQL/PostgreSQL </li>
-                            <li>  Sequelize </li>
+    changeSkill(evt){
+        evt.preventDefault();
+        (this.state.skillId === evt.target.id)
+        ? this.setState({skillId: null})
+        : this.setState({skillId: evt.target.id});
+       
+        
+    }
 
-                        </div>
+    render(){
+        console.log(this.state);
 
-                    </article>
-                </div>
-                <div className="tile is-parent">
-                    <article className="tile is-child">
-                        <p className="title">Tools</p>
-                        <div className='box'>
-                            <li> Git + Github </li>
-                            <li> Command Line </li>
-                            <li> Chrome DevTools </li>
-                            <li> Postman </li>
-                            <li> Mocha/Chai </li>
-                            <li> Jasmine </li>
-                            <li> Agile </li>
-                        </div>
+        return (
+                    <section className="dtc v-mid cover ph3 ph4-m ph5-l">
+                        {skills.map(skill =>
+                           ( <a
+                            key={Math.random()}
+                            onClick={this.changeSkill}
+                            id={skill.id}className="f3 link b hover-light-green no-underline black dib ph2 pv1" >
 
-                    </article>
-                </div>
-            </div>
-        </section>
+                            {skill.category}
 
-    )
+                            </a>)
+                        )}
+
+                        {this.state.skillId && <SkillCard skillId={this.state.skillId} />}
+                    </section>
+            
+                )
+
+    }
 }
+   
 
-export default Skills;
 
 
 
