@@ -1,67 +1,42 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-const Navbar = () => {
 
-    //convert fully to react ish 
-    const handleClick = function(event){
-        console.log('in handle clikc')
-        // Get all "navbar-burger" elements
-        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-
-            // Add a click event on each of them
-            $navbarBurgers.forEach(function ($el) {
-                $el.addEventListener('click', function () {
-
-                    // Get the target from the "data-target" attribute
-                    var target = $el.dataset.target;
-                    var $target = document.getElementById(target);
-
-                    // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                    // $el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-
-                });
-            });
+export default class Navbar extends Component {
+    constructor(){
+        super()
+        this.state = {
+            fullBar: false
         }
-  
+        this.showFullBar = this.showFullBar.bind(this);
     }
 
-    return (
-        <nav className="navbar is-light is-fixed">
-            <div className="navbar-brand">
-                <span className="navbar-item">{'Maggy Prajapati'}</span>
-            
-            <div onClick={handleClick} className="navbar-burger burger" data-target="navMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-            
-            <div id="navMenu" className='navbar-menu' >
-                <div className="navbar-end">
-                    <Link to="/aboutme" className="navbar-item" >
-                        About Me
-                    </Link>
-                    <Link to="/projects" className="navbar-item" >
-                        Projects
-                    </Link>
-                    <Link to="/skills" className="navbar-item" >
-                        Skills
-                    </Link>
-                    <Link to="/contactme" className="navbar-item" >
-                        Contact Me
-                    </Link>
-                </div>
-            </div>
+    showFullBar(evt){
+        evt.preventDefault();
+        this.state.fullBar ? 
+        this.setState({fullBar: false}) :
+        this.setState({fullBar: true})
+    }
 
-        </nav>
-    )
+    render(){
+        return (
+
+            <header className="fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+            {
+                this.state.fullBar ?
+            <nav className="f6 fw6 ttu tracked">
+              <a className="link black dib mr3" href="/projects" title="Home">Home</a>
+              <a className="link black dib mr3" href="/aboutme" title="About">About</a>
+              <a className="link black dib mr3" href="/skills" title="Store">Store</a>
+              <a className="link black dib" href="/" title="Contact">Contact</a>
+            </nav> :
+            <a className="dtc v-mid mid-gray link dim w-25" onClick={this.showFullBar} title="Home">
+            <img src='/information/rubberduck' className="dib w2 h2 br-100"  />
+          </a>
+            }
+
+          </header>
+          
+        )
+    }
 }
-
-export default Navbar;
-

@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const linkStyle = 'f4 fw6 black link hover-dark-green';
+    const linkStyle = 'f4 fw6 black link hover-green';
 
     return (
 
           <div className="dtc v-mid cover ph3 ph4-m ph5-l" >
-            <h1 className="dark-green"> {'</>'} </h1>
+            <h1 className="green"> {'</>'} </h1>
             <h1 className="f3 f2-m f1-l mb0 w-70-xl w-60-l">
              Hi! I am Maggy. I write code! </h1>
             <br />
-            <p className="f4 black mt3 mb5 w-60-l w-80-xl lh-title"> Right now, I am a teaching fellow at
+            <p className="f4 black mt3 mb5 w-60-l w-80-xl lh-title"> Currently, I am a teaching fellow at
             <a href="https://www.gracehopper.com/" className={linkStyle}> Grace Hopper Academy</a>. You can check out some
             <Link to="/projects" className={linkStyle}> projects </Link>
                     I have worked on and the

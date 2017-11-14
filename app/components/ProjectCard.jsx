@@ -4,49 +4,55 @@ import projects from "../../information/project";
 
 const ProjectCard = props => {
   const project = projects[props.projectId];
-  // console.log(project);
-
+  const linkStyle = "link b hover-green no-underline black dib ph2 pv1"
   return (
-    <article className="w-100 w-60-m  w-25-ns pa2-ns">
+    <article className="pa3">
+  
 
       <img
         src="http://tachyons.io/img/cat-720.jpg"
-        className="w-100 db"
+        className="w-100 f5 measure"
         alt="Closeup photo of a tabby cat yawning."
       />
-      <div className="pa3">
-        <p className=" f6 lh-copy measure">{project.info}</p>
+    
+       
 
-        <div className="gray db pv2">
-          <a
-            className="link b hover-green no-underline black dib ph2 pv1"
-            href={project.github}
-          >
-            Github
-          </a>
-          <a
-            className="link b hover-green no-underline black dib ph2 pv1"
-            href={project.demo}
-          >
-            Demo
-          </a>
-          <a
-            className="ink b hover-green no-underline black dib ph2 pv1"
-            href={project.youtube}
-          >
-            Youtube
-          </a>
-        </div>
-        <div>
-          <hr />
+        <div className="measure">
+        <div className='tc'>  
+        <a
+        className={linkStyle}
+        href={project.github}
+      >
+        Github
+      </a>
+      <a
+        className={linkStyle}
+        href={project.demo}
+      >
+        Demo
+      </a>
+      <a
+        className={linkStyle}
+        href={project.youtube}
+      >
+        Youtube
+      </a></div>
+          
+          <p className="lh-copy ">{project.info}</p>
+
+        
           {project.frameworks.map(framework => (
-            <button key={Math.random()} className="dib mr1 mb2">
-              {" "}
-              {framework}{" "}
-            </button>
-          ))}{" "}
+           
+              
+              <a href={framework.link} key={`${Math.floor()}${framework.name}`}className='link dark-blue fw4 lh-title'>#{framework.name  }{"  "}{" "}</a>
+           
+          ))}
+          
         </div>
-      </div>
+       
+        
+       
+  
     </article>
   );
 };
