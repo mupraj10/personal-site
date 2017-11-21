@@ -1,3 +1,3 @@
-# Personal Site
+## Personal Site
 
-Make a thing!
+Make a thing! - currently a work in progress.
