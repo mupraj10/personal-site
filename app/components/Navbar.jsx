@@ -25,13 +25,14 @@ export default class Navbar extends Component {
             {
                 this.state.fullBar ?
             <nav className="f6 fw6 ttu tracked">
-              <a className="link black dib mr3" href="/projects" title="Home">Home</a>
+              <a className="link black dib mr3" href="/" title="Home">Home</a>
               <a className="link black dib mr3" href="/aboutme" title="About">About</a>
-              <a className="link black dib mr3" href="/skills" title="Store">Store</a>
-              <a className="link black dib" href="/" title="Contact">Contact</a>
+              <a className="link black dib mr3" href="/projects" title="Projects">Store</a>
+              <a className="link black dib mr3" href="/skills" title="Skills">Skills</a>
+              <a className="link black dib" href="/contact" title="Contact">Contact</a>
             </nav> :
             <a className="dtc v-mid mid-gray link dim w-25" onClick={this.showFullBar} title="Home">
-            <img src='/information/rubberduck' className="dib w2 h2 br-100"  />
+            <img src='https://png.pngtree.com/element_pic/00/16/06/205767b5598d7cc.jpg' className="dib w2 h2 br-100"  />
           </a>
             }
 
